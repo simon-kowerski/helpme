@@ -1,0 +1,44 @@
+ apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes upgrade
+ apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes dist-upgrade
+ apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes install oem-config-gtk ubiquity-frontend-gtk ubiquity-slideshow-ubuntu language-pack-en-base oem-config-slideshow-ubuntu
+ apt install minicom
+ apt remove brltty
+ apt-get install thonny
+ apt install openssh-server
+ apt install net-tools
+ apt-get install libcamera-dev
+ apt install libcamera*
+ apt remove libcamera-dev
+ apt remove libcamera-doc
+ apt remove libcamera-tools
+ apt remove libcamera0
+ apt install python3-pip git
+ apt install -y libgnutls28-dev openssl libtiff5-dev pybind11-dev
+ apt install -y qtbase5-dev libqt5core5a libqt5gui5 libqt5widgets5
+ apt install -y meson
+ apt install -y cmake
+ apt-get install libdw-dev
+ apt-get install libunwind-dev
+ apt-get install -y liblttng-ust-dev
+ apt -y install libudev-dev
+ apt -y install libyaml-dev
+ apt -y install libevent-dev
+ apt -y install libdrm-dev
+ apt -y install qttools5-dev-tools
+ apt -y install libglib2.0-dev
+ apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
+ apt-get install doxygen
+ apt-get install graphviz
+ apt-get install libsdl2-dev
+ apt-get install python3-sphinx
+ apt-get install -y libavdevice-dev
+ apt install -y python3-pyqt5 python3-opengl
+ apt-get install libpcap-dev
+ apt-get install libcap-dev
+ apt-get install spyder
+ apt install -y python3-prctl
+ apt install -y libatlas-base-dev
+ apt install -y ffmpeg
+ apt purge spyder -y
+ apt install -y pyqt5-dev
+ apt-get install vim-gui-common

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#Author Simon Kowerski :)
+
+
+#dir=$PWD
+#cd /usr/share/SPICESat-OSImage
+
+osimager --u
+#./installall.sh
+
+osimager --pull
+#./pull.sh
+
+#cd $dir

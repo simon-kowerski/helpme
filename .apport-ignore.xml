@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<apport>
+  <ignore program="/usr/libexec/tracker-extract-3" mtime="1699602801"/>
+</apport>

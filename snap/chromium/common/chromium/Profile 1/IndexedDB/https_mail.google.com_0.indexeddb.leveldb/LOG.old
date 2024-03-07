@@ -1,0 +1,6 @@
+2024/01/12-16:26:57.661 14a4 Reusing MANIFEST /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/12-16:26:57.675 14a4 Recovering log #61
+2024/01/12-16:26:57.718 14a4 Reusing old log /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000061.log 
+2024/01/12-16:27:44.396 14a4 Level-0 table #66: started
+2024/01/12-16:27:44.923 14a4 Level-0 table #66: 2786033 bytes OK
+2024/01/12-16:27:44.942 14a4 Delete type=0 #61

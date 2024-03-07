@@ -1,0 +1,58 @@
+{
+   "checksum": "e02597c3314fd35bec2ebb35c361691b",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13332135130338910",
+            "date_last_used": "0",
+            "guid": "4165f079-a4d2-4f2c-8866-61321ba2869f",
+            "id": "5",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Fix port access on Linux – Arduino Help Center",
+            "type": "url",
+            "url": "https://support.arduino.cc/hc/en-us/articles/360016495679-Fix-port-access-on-Linux"
+         }, {
+            "date_added": "13332135211998312",
+            "date_last_used": "0",
+            "guid": "d748e175-f601-4f10-bb9a-695da2ec7347",
+            "id": "6",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "drivers - /dev/ttyUSB0 not present in Ubuntu 22.04 - Ask Ubuntu",
+            "type": "url",
+            "url": "https://askubuntu.com/questions/1403705/dev-ttyusb0-not-present-in-ubuntu-22-04"
+         } ],
+         "date_added": "13332132130323742",
+         "date_last_used": "0",
+         "date_modified": "13332135211998312",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13332132130323749",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13332132130323754",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

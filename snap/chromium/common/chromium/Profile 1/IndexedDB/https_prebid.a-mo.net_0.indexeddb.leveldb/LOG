@@ -1,0 +1,2 @@
+2023/10/16-18:13:09.875 df6 Creating DB /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_prebid.a-mo.net_0.indexeddb.leveldb since it was missing.
+2023/10/16-18:13:09.951 df6 Reusing MANIFEST /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_prebid.a-mo.net_0.indexeddb.leveldb/MANIFEST-000001

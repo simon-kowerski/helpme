@@ -1,0 +1,3 @@
+#!/bin/bash
+dpkg -b ~/Desktop/SPICESat-OSImage_1.0.0
+sudo apt install ~/Desktop/SPICESat-OSImage_1.0.0.deb

@@ -1,0 +1,6 @@
+2023/10/16-18:52:13.548 dde Creating DB /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_c43dbfd438dd3cb609ca7bfea35e67d9.safeframe.googlesyndication.com_0.indexeddb.leveldb since it was missing.
+2023/10/16-18:52:13.589 dde Reusing MANIFEST /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_c43dbfd438dd3cb609ca7bfea35e67d9.safeframe.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/10/16-18:52:16.875 ddf Level-0 table #5: started
+2023/10/16-18:52:16.886 ddf Level-0 table #5: 460 bytes OK
+2023/10/16-18:52:16.903 ddf Delete type=0 #3
+2023/10/16-18:52:16.906 e1f Manual compaction at level-0 from (begin) .. (end); will stop at (end)

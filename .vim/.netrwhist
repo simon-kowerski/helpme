@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/sloshuser/SPICESat'
+let g:netrw_dirhist_2='/home/sloshuser/Desktop/SPICESat-OSImage_1.0.0/DEBIAN'
+let g:netrw_dirhist_1='/var/log/installer'

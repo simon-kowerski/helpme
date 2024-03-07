@@ -1,0 +1,67 @@
+#!/bin/bash
+
+#File to run the OSImager for the payload computers of the Rutgers S.T.A.R SPICESat project
+
+#Creation Date: 3/6/2024
+#Last Update: 3/6/2024
+#Author Simon Kowerski :)
+
+#Version 1.0
+
+
+dir=$PWD
+cd /usr/share/SPICESat-OSImage
+#cd ~/Desktop/SPICESat-OSImage_1.0.0/usr/share/SPICESat-OSImage
+#FIX THIS DIRECTORY LATER
+
+usage="Usage: $0 [option] [other] 
+Upon install of this package, all required packages for Rutgers S.T.A.R. were installed.
+
+Additionally, all python modules that were published at the time of download were saved in ~/SPICESat. 
+If removed from this directory, automatic pushing and pulling of changes to the GitHub will not be possible.
+
+Requires [something] located in [somewhere] to authenticate transactions with GitHub. Methods WILL NOT work without this authentication. 
+
+In order to ensure all changes to the operating system are able to be reflected for all future versions, make sure to add directories to the operating system using the osimager and not other tools like 'sudo apt install'
+
+COMMANDS:
+
+osimager [option] [other]
+--h 			display this message
+--i 			creates an image of this operating system and pushes it to GitHub *CANNOT BE UNDONE*
+--u			installs and upgrades all packages in the remote list of packages
+
+
+--add [package]		adds a new package to this operating system AND the remote list of packages
+--remove [package]	removes a package from this operating system AND the remote list of packages
+				[package] will be installed using sudo apt install [package]
+-remove-all		removes ALL packages that were installed by this package
+
+--pull 			pulls Pyhton modules from the GitHub and stores them in ~/SPICESat
+--push [commit] 	pushes Python modules from ~/SPICESat into GitHub with commit message [commit] 
+				[commit] must be in quotation marks 
+
+"
+
+if test $# = 0; then
+	echo "$usage"
+	exit
+fi
+
+case $1 in
+  --h*) echo "$usage" || exit 1; exit;;
+  --i*)	./imageos.sh || exit 1; exit;;
+  --u*) ./installall.sh || exit 1; exit;;
+
+  --add*) ./add.sh $2 || exit 1; exit;;
+  --remove*) ./remove.sh $2 || exit 1; exit;;
+
+  --pull*) ./pull.sh || exit 1; exit;;
+  --push*) ./push.sh $2 || exit 1; exit;;
+
+  -?*) echo "$1: unknown command; try $0 --h for help"
+esac
+
+#add error checking for #2 stuff
+
+cd $dir

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mmcRegistry>
+	<Software>
+		<maxon_motor_ag>
+			<UsbDeviceInfoHandling>
+				<_0_HidDeviceInfo>
+					<OpenedBy/>
+					<OpenedByInstance>0</OpenedByInstance>
+					<OpenedByProcess>0</OpenedByProcess>
+					<PluggedIn>1</PluggedIn>
+					<SerialNumber>00000000</SerialNumber>
+					<ProductId>0x3B01</ProductId>
+					<VendorId>0x24E7</VendorId>
+					<DevicePath>0001:0005:00</DevicePath>
+					<PortChain>1-2-2-5</PortChain>
+					<Standard>USB0</Standard>
+				</_0_HidDeviceInfo>
+			</UsbDeviceInfoHandling>
+		</maxon_motor_ag>
+	</Software>
+</mmcRegistry>
+

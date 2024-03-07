@@ -1,0 +1,21 @@
+2023/08/29-11:07:07.349 f638 Reusing MANIFEST /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/29-11:07:07.364 f638 Recovering log #6
+2023/08/29-11:07:07.505 f638 Reusing old log /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/000006.log 
+2023/08/29-11:09:54.791 f639 Level-0 table #11: started
+2023/08/29-11:09:55.050 f639 Level-0 table #11: 3710269 bytes OK
+2023/08/29-11:09:55.087 f639 Delete type=0 #6
+2023/08/29-14:39:33.513 f639 Compacting 1@1 + 1@2 files
+2023/08/29-14:39:33.544 f639 Generated table #12@1: 94 keys, 148188 bytes
+2023/08/29-14:39:33.544 f639 Compacted 1@1 + 1@2 files => 148188 bytes
+2023/08/29-14:39:33.547 f639 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/08/29-14:39:33.549 f639 Delete type=2 #8
+2023/08/29-14:39:33.549 f639 Delete type=2 #11
+2023/08/30-22:31:37.928 f639 Level-0 table #14: started
+2023/08/30-22:31:38.394 f639 Level-0 table #14: 3907683 bytes OK
+2023/08/30-22:31:38.403 f639 Delete type=0 #10
+2023/08/31-06:23:05.174 f650 Compacting 1@1 + 1@2 files
+2023/08/31-06:23:05.214 f650 Generated table #15@1: 94 keys, 146386 bytes
+2023/08/31-06:23:05.214 f650 Compacted 1@1 + 1@2 files => 146386 bytes
+2023/08/31-06:23:05.226 f650 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/08/31-06:23:05.228 f650 Delete type=2 #12
+2023/08/31-06:23:05.228 f650 Delete type=2 #14

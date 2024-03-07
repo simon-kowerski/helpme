@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/sloshuser/Downloads/google-chrome-stable_current_amd64.deb" added="2023-06-24T20:08:42.085127Z" modified="2023-06-24T21:29:04.029010Z" visited="2023-06-24T20:08:42.085132Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/snap-store_ubuntu-software-local-file.desktop /snap/bin/snap-store.ubuntu-software-local-file --local-filename %f&apos;" modified="2023-06-24T21:29:04.028996Z" count="3"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2023-06-24T20:08:45.245994Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat" added="2023-06-25T02:50:16.451133Z" modified="2023-06-25T02:50:16.451150Z" visited="2023-06-25T02:50:16.451135Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2023-06-25T02:50:16.451143Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SerialPort" added="2023-06-25T02:50:56.424328Z" modified="2023-06-25T02:50:56.424364Z" visited="2023-06-25T02:50:56.424336Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2023-06-25T02:50:56.424348Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/Python_Testing/test1" added="2023-06-29T14:34:25.558249Z" modified="2023-06-29T14:34:25.558295Z" visited="2023-06-29T14:34:25.558254Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2023-06-29T14:34:25.558280Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/maxon" added="2023-06-29T16:34:49.001726Z" modified="2023-06-29T16:34:49.001742Z" visited="2023-06-29T16:34:49.001729Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2023-06-29T16:34:49.001736Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/Python_Testing/plot_test1" added="2023-07-23T18:58:06.451678Z" modified="2023-07-23T18:59:23.407376Z" visited="2023-07-23T18:58:06.451681Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2023-07-23T18:58:06.451690Z" count="1"/>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2023-07-23T18:59:23.407357Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/Python_Testing/test1.py" added="2023-07-23T19:00:10.545195Z" modified="2023-07-23T19:00:12.488297Z" visited="2023-07-23T19:00:10.545197Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2023-07-23T19:00:10.545200Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2023-07-23T19:00:12.488292Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys" added="2023-08-04T00:26:44.372776Z" modified="2023-08-04T00:26:44.372787Z" visited="2023-08-04T00:26:44.372778Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2023-08-04T00:26:44.372781Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/maxon/RP3_EPOS4_Cycles_python37.py" added="2023-08-04T16:33:18.353044Z" modified="2023-09-01T14:08:51.864357Z" visited="2023-08-04T16:33:18.353050Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-08-04T16:33:18.353065Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-08-04T16:33:18.419546Z" count="1"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2023-09-01T14:08:50.100459Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2023-09-01T14:08:51.864353Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys/init_maxon.py" added="2023-08-05T17:00:00.759276Z" modified="2023-08-06T13:09:10.771400Z" visited="2023-08-05T17:00:00.759279Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-08-05T17:00:00.759285Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-08-05T17:00:00.819160Z" count="1"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2023-08-06T13:09:10.771394Z" count="32"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Figure_1.png" added="2023-08-29T15:46:39.207027Z" modified="2023-08-29T15:47:30.093691Z" visited="2023-08-29T15:46:39.207029Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="python3" exec="&apos;python3 %u&apos;" modified="2023-08-29T15:46:39.207034Z" count="1"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;eog %U&apos;" modified="2023-08-29T15:46:53.316520Z" count="1"/>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2023-08-29T15:46:54.400697Z" count="1"/>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-08-29T15:47:30.051732Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-08-29T15:47:30.093682Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys/RP3_EPOS4_Cycles_python37_with_velocity.py" added="2023-09-01T14:10:22.160675Z" modified="2023-09-01T14:10:23.104632Z" visited="2023-09-01T14:10:22.160678Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2023-09-01T14:10:22.160682Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2023-09-01T14:10:23.104628Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys.zip" added="2023-09-01T17:37:53.463209Z" modified="2023-11-05T15:49:40.508941Z" visited="2023-09-01T17:37:53.463211Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2023-09-01T17:37:53.463215Z" count="1"/>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-11-05T15:49:40.436634Z" count="2"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-11-05T15:49:40.508930Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/Figure_1.png" added="2023-09-21T21:29:12.273735Z" modified="2023-12-21T01:26:39.850592Z" visited="2023-09-21T21:29:12.273740Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="python3" exec="&apos;python3 %u&apos;" modified="2023-12-21T01:25:15.420839Z" count="2"/>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-12-21T01:26:39.741124Z" count="2"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-12-21T01:26:39.850586Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/Figure_2.png" added="2023-09-24T16:44:24.972292Z" modified="2023-09-24T16:46:06.902854Z" visited="2023-09-24T16:44:24.972295Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="python3" exec="&apos;python3 %u&apos;" modified="2023-09-24T16:44:24.972305Z" count="1"/>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-09-24T16:46:06.827452Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-09-24T16:46:06.902845Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/libcamera-build/results/test1.jpg" added="2023-10-16T18:20:43.269602Z" modified="2023-11-07T01:21:09.505658Z" visited="2023-10-16T18:20:43.269605Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-10-16T18:22:19.557539Z" count="2"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-10-16T18:22:19.618910Z" count="2"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;eog %U&apos;" modified="2023-11-07T01:21:08.359005Z" count="1"/>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2023-11-07T01:21:09.505654Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys/camera_test1" added="2023-10-19T04:01:01.055516Z" modified="2023-10-19T04:01:01.055546Z" visited="2023-10-19T04:01:01.055521Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2023-10-19T04:01:01.055530Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Documents/pyqt5%20error" added="2023-10-19T19:51:20.040962Z" modified="2023-10-19T19:51:20.040980Z" visited="2023-10-19T19:51:20.040964Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 7.3" exec="&apos;soffice %u&apos;" modified="2023-10-19T19:51:20.040971Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Documents/pyqt5%20error.odt" added="2023-10-19T19:51:21.460949Z" modified="2023-10-19T19:51:21.460995Z" visited="2023-10-19T19:51:21.460951Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.oasis.opendocument.text"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 7.3" exec="&apos;soffice %u&apos;" modified="2023-10-19T19:51:21.460993Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys/camera_test" added="2023-10-21T13:40:31.154586Z" modified="2023-10-21T13:40:31.154597Z" visited="2023-10-21T13:40:31.154588Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2023-10-21T13:40:31.154592Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys/test.h264" added="2023-10-21T15:41:43.786204Z" modified="2023-10-30T19:52:04.978589Z" visited="2023-10-21T15:41:43.786207Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-10-30T19:52:04.919914Z" count="2"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-10-30T19:52:04.978582Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys/USB_port_testing" added="2023-10-26T15:40:07.200217Z" modified="2023-10-26T15:40:07.200239Z" visited="2023-10-26T15:40:07.200222Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2023-10-26T15:40:07.200228Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/Figure_1.png" added="2023-10-26T16:11:03.874248Z" modified="2023-10-26T16:11:03.874272Z" visited="2023-10-26T16:11:03.874252Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="python3" exec="&apos;python3 %u&apos;" modified="2023-10-26T16:11:03.874261Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/Figure_1new.png" added="2023-11-02T00:22:59.427741Z" modified="2023-11-02T00:24:32.133886Z" visited="2023-11-02T00:22:59.427744Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="python3" exec="&apos;python3 %u&apos;" modified="2023-11-02T00:22:59.427748Z" count="1"/>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-11-02T00:24:32.063697Z" count="2"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-11-02T00:24:32.133874Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/Figure_1new2.png" added="2023-11-04T12:22:57.604564Z" modified="2023-11-04T12:24:11.352410Z" visited="2023-11-04T12:22:57.604567Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="python3" exec="&apos;python3 %u&apos;" modified="2023-11-04T12:22:57.604574Z" count="1"/>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-11-04T12:24:11.278070Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-11-04T12:24:11.352400Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys/sloshing.h264" added="2023-11-04T12:24:27.008888Z" modified="2024-01-12T22:08:14.313118Z" visited="2023-11-04T12:24:27.008890Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2024-01-12T22:08:14.248605Z" count="8"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2024-01-12T22:08:14.313110Z" count="8"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys/plotsloshy2.py" added="2023-11-04T13:28:21.413183Z" modified="2023-11-04T13:28:21.413322Z" visited="2023-11-04T13:28:21.413186Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2023-11-04T13:28:21.413194Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Figure_1_final.png" added="2023-11-04T14:07:46.879874Z" modified="2023-11-04T14:08:19.710950Z" visited="2023-11-04T14:07:46.879879Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="python3" exec="&apos;python3 %u&apos;" modified="2023-11-04T14:07:46.879884Z" count="1"/>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2023-11-04T14:08:19.648649Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2023-11-04T14:08:19.710942Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/Figure_1_Ideal_Output.png" added="2023-11-05T15:56:44.120881Z" modified="2024-03-02T01:59:08.728237Z" visited="2023-11-05T15:56:44.120884Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="python3" exec="&apos;python3 %u&apos;" modified="2023-11-05T15:56:44.120890Z" count="1"/>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2024-03-02T01:59:08.728232Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/libcamera-build/results/test.mjpeg" added="2023-11-07T01:20:57.981910Z" modified="2023-11-07T01:21:00.652381Z" visited="2023-11-07T01:20:57.981915Z">
+    <title>test.mjpeg</title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="video/x-mjpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Totem</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;totem %U&apos;" modified="2023-11-07T01:20:57.981926Z" count="1"/>
+          <bookmark:application name="Videos" exec="&apos;totem %u&apos;" modified="2023-11-07T01:21:00.652374Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/SPICESat/SloshySys/plotsloshy3.py" added="2023-12-28T16:25:24.733665Z" modified="2023-12-28T16:25:24.733686Z" visited="2023-12-28T16:25:24.733669Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-python"/>
+        <bookmark:applications>
+          <bookmark:application name="Thonny" exec="&apos;Thonny %u&apos;" modified="2023-12-28T16:25:24.733674Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/Ideal_Output_Dec%2028.png" added="2023-12-28T16:47:48.119949Z" modified="2023-12-30T15:39:15.516173Z" visited="2023-12-28T16:47:48.119952Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="python3" exec="&apos;python3 %u&apos;" modified="2023-12-28T16:47:48.119958Z" count="1"/>
+          <bookmark:application name="Image Viewer" exec="&apos;eog %u&apos;" modified="2023-12-30T15:39:15.516170Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/packages.txt" added="2024-03-05T03:23:25.650107Z" modified="2024-03-05T03:52:15.356402Z" visited="2024-03-05T03:23:25.650107Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-03-05T03:52:15.356394Z" count="4"/>
+          <bookmark:application name="snap.chromium" exec="&apos;gio open %u&apos;" modified="2024-03-05T03:44:32.893738Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2024-03-05T03:44:33.042558Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Downloads/usertrustrsacertificationauthority.cer" added="2024-03-05T03:28:07.481178Z" modified="2024-03-05T03:34:22.120958Z" visited="2024-03-05T03:28:07.481180Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pkix-cert"/>
+        <bookmark:applications>
+          <bookmark:application name="gnome-control-center" exec="&apos;gnome-control-center %u&apos;" modified="2024-03-05T03:34:22.120953Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/goldenimage.sh" added="2024-03-05T03:54:53.650194Z" modified="2024-03-05T03:59:24.656730Z" visited="2024-03-05T03:54:53.650195Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-03-05T03:59:24.656726Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/SimonAdded.txt" added="2024-03-05T03:59:15.763746Z" modified="2024-03-05T03:59:20.026198Z" visited="2024-03-05T03:59:15.763747Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-03-05T03:59:20.026191Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>
