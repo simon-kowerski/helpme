@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="thonny_thonny.desktop" score="0.25" last-seen="1709344770"/>
+    <application id="chromium_chromium.desktop" score="115.5" last-seen="1709610355"/>
+    <application id="org.gnome.Shell.PortalHelper.desktop" score="2.25" last-seen="1709608399"/>
+    <application id="gnome-control-center.desktop" score="52" last-seen="1709610357"/>
+    <application id="org.gnome.Terminal.desktop" score="14626.875" last-seen="1709611153"/>
+    <application id="org.gnome.gedit.desktop" score="35" last-seen="1709611168"/>
+    <application id="gnome-wifi-panel.desktop" score="0" last-seen="0"/>
+  </context>
+</application-state>

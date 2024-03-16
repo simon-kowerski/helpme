@@ -1,0 +1,7 @@
+#!/bin/bash
+
+dpkg -b ~/Desktop/SPICESat-OSImage
+cd SPICESat-OSImage
+sudo rm SPICESat-OSImage.deb
+cd ..
+sudo mv SPICESat-OSImage.deb SPICESat-OSImage/SPICESat-OSImage.deb

@@ -1,0 +1,740 @@
+#!/bin/bash
+# Copyright 2018 Abraham Massry
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#
+#
+
+curl_installed=$(curl --version)
+protocol='https'
+site='wsend.net'
+host=$protocol'://'$site
+freeSpaceK=$(df -k $HOME | tail -n 1 | awk '{print $4}')
+clientOS=$(uname)
+wsend_base=$HOME/.wsend
+
+echoerr() { 
+  echo "$@" 1>&2; 
+}
+
+bashInstall () {
+#not sure that put alias in both bash_profile and bashrc is a good idea.
+  if [[ ! -e "$HOME/.bashrc" || ! $(grep "alias wsend=" $HOME/.bashrc) ]]; then
+      echo "alias wsend='$wsend_base/wsend'" >> $HOME/.bashrc
+      echo "alias wsend='$wsend_base/wsend'" >> $HOME/.bash_profile
+  fi
+}
+cshInstall () {
+  if [[ ! -e "$HOME/.cshrc" || ! $(grep  "alias wsend=" $HOME/.cshrc) ]]
+  then
+    echo "alias wsend '$wsend_base/wsend'" >> $HOME/.cshrc
+  fi
+}
+
+kshInstall () {
+  if [[ ! -e "$HOME/.kshrc"  || ! $(grep "alias wsend=" $HOME/.kshrc) ]]; then
+      echo "alias wsend='$wsend_base/wsend'" >> $HOME/.kshrc
+  fi
+}
+
+zshInstall () {
+  if [[ ! -e "$HOME/.zshrc" || ! $(grep "alias wsend=" $HOME/.zshrc) ]]; then
+      echo "alias -g wsend='$wsend_base/wsend'" >> $HOME/.zshrc
+  fi
+}
+
+
+registerInfoMessage () {
+  echoerr -e "\033[01;36m"
+  echoerr "info:    "
+  echoerr "info:    It appears you aren't registered"
+  echoerr "info:    Registration is free and comes with 2GB of storage space"
+  echoerr "info:    Plus get 1G of space for every friend you refer"
+  echoerr "info:    "
+  echoerr "info:    Sign up now with: wsend --register"
+  echoerr "info:    "
+  echoerr "info:    unregistered accounts are limited to 200MB"
+  echoerr "info:    your unregistered transfer will now continue"
+  echoerr "info:    "
+  echoerr -e "\033[00m"
+}
+
+freeInfoMessage () {
+  echoerr -e "\033[01;36m"
+  echoerr "info:    "
+  echoerr "info:    free accounts are limited to 2GB files"
+  echoerr "info:    for more space refer friends with: "
+  echoerr "info:    "
+  echoerr "info:    wsend --refer friend@example.com"
+  echoerr "info:    "
+  echoerr "info:    or purchase space at: "
+  echoerr "info:    https://wsend.net"
+  echoerr "info:    and get up to 10GB files"
+  echoerr "info:    "
+  echoerr "info:    your free transfer will now continue"
+  echoerr "info:    "
+  echoerr -e "\033[00m"
+}
+
+unregisteredSignUp () {
+  echoerr -e "\033[01;36m"
+  echoerr "info:    "
+  echoerr "info:    creating unregistered account"
+  echoerr "info:    Registration is free and comes with 2GB of storage space"
+  echoerr "info:    Plus get 1G of space for every friend you refer"
+  echoerr "info:    "
+  echoerr "info:    Sign up now with: wsend --register"
+  echoerr "info:    "
+  echoerr "info:    unregistered accounts are limited to 200MB"
+  echoerr "info:    your unregistered transfer will now continue"
+  echoerr "info:    "
+  echoerr -e "\033[00m"
+  unregCurlReturnVal=$(curl -s -X POST -d "start=1" $host/createunreg)
+  echo $unregCurlReturnVal > $wsend_base/.id
+  id=$unregCurlReturnVal
+}
+
+notEnoughSpaceErr () {
+  echoerr -e "\033[01;31m"
+  echoerr "error:   "
+  echoerr "error:   not enough space in your account for this transfer"
+  echoerr "info:    "
+  echoerr "error:   you can register with: wsend --register,"
+  echoerr "info:    "
+  echoerr "error:   send referrals with wsend --refer friend@example.com, or"
+  echoerr "error:   upgrade to a paid account at https://wsend.net"
+  echoerr "error:   "
+  echoerr -e "\033[00m"
+}
+
+filesizeTooLarge () {
+  echoerr -e "\033[01;31m"
+  echoerr "error:   "
+  echoerr "error:   this file is too large for your account"
+  echoerr "error:   you can register with: wsend --register"
+  echoerr "error:   for 2GB files, or"
+  echoerr "error:   upgrade to a paid account at https://wsend.net"
+  echoerr "error:   for 10GB files"
+  echoerr "error:   "
+  echoerr -e "\033[00m"
+}
+
+sentEmail () {
+  echoerr -e "\033[01;36m"
+  echoerr "info:    Sent email to $sendEmail"
+  echoerr -e "\033[00m"
+}
+
+register() {
+  echoerr -e "\033[01;36m"
+  echoerr "info:    enter email and password to register"
+  echoerr -e "\033[00m"
+  read -p "email: " entered_email
+  stty -echo
+  read -p "Password: " passw; echo
+  stty echo
+  uidFromFile=$(cat $wsend_base/.id)
+  registrationMessage=$(curl -s -X POST -d "uid=$uidFromFile" -d "email=$entered_email" -d "password=$passw" $host/register_cli)
+  echoerr -e "\033[01;36m"
+  echoerr "info:    message from server:"
+  echoerr "info:    $registrationMessage"
+  echoerr -e "\033[00m"
+}
+
+login() {
+  echoerr -e "\033[01;36m"
+  echoerr "info:    enter email and password to login"
+  echoerr -e "\033[00m"
+  read -p "email: " entered_email
+  stty -echo
+  read -p "Password: " passw; echo
+  stty echo
+  loggedInID=$(curl -s -X POST -d "email=$entered_email" -d "password=$passw" $host/login_cli)
+
+  #seem to be always a false test. As you return an id or error string, condition was always true
+  if [[ "$loggedInID" != "wrong username or password" ]]; then
+    echo $loggedInID > $wsend_base/.id
+    echoerr -e "\033[01;36m"
+    echoerr "info:    logged in sucessfully"
+    echoerr -e "\033[00m"
+  else
+    echoerr -e "\033[01;31m"
+    echoerr "error:   incorrect email password combo"
+    echoerr -e "\033[00m"
+  fi
+}
+
+
+getAccountType() { 
+  user_type=$(curl -s -X POST -d "uid=$id" $host/usertype)
+}
+
+getAccountSpace() {
+  accountSizeAvailable=$(curl -s -X POST -d "uid=$id" -d "size=$fileToSendSize" $host/userspaceavailable)
+  accountSize=$(curl -s -X POST -d "uid=$id" $host/userspace)
+}
+
+refer() {
+  if [ $user_type != 'unregistered' ] && [ $user_type != 'unknown' ]; then
+    echoerr -e "\033[01;36m"
+    echoerr "info:    referring a friend"
+    echoerr -ne "\e[00m"
+    referEmailStatus=$(curl -s -X POST -d "email=$friendEmail" -d "id=$id" $host/refer_cli)
+    if [ "$referEmailStatus" == "success" ]; then 
+      echoerr -e "\033[01;36m"
+      echoerr "info:    friend referred successfully"
+      echoerr -e "\033[00m"
+    else
+      echoerr -e "\033[01;31m"
+      echoerr "error:   something went wrong with the referral process";
+      echoerr -e "\033[00m"
+    fi
+  else
+    echoerr -e "\033[01;31m"
+    echoerr "error:   referrals available to registered accounts";
+    echoerr -e "\033[00m"
+  fi
+}
+
+deleteFile() {
+  getAccountType
+  if [ $user_type != 'unregistered' ] && [ $user_type != 'unknown' ]; then
+    deleteStatus=$(curl -s -X POST -d "link=$link" -d "uid=$id" $host/delete_cli)
+    if [ "$deleteStatus" == "file deleted" ]; then 
+      echoerr -e "\033[01;36m"
+      echoerr "info:    file deleted"
+      echoerr -e "\033[00m"
+
+      if [ -e $wsend_base/.list ]
+      then
+      #escape dot and slash from unique url before matching it in list file
+          escaped_link=$(echo $link | sed 's/\([./]\)/\\\1/g')
+          sed -i "/$escaped_link/d" $wsend_base/.list
+      fi
+    else
+      echoerr -e "\033[01;31m"
+      echoerr "error:   something went wrong with the delete process";
+      echoerr "error:   server: $deleteStatus";
+      echoerr -e "\033[00m"
+    fi
+  else
+    echoerr -e "\033[01;31m"
+    echoerr "error:   deleting available to registered accounts";
+    echoerr -e "\033[00m"
+  fi
+
+}
+
+link_from_index() {
+  awk -v idx=$1 -F"|" 'FNR == idx { print $1 }' $wsend_base/.list
+}
+
+filename_from_index() {
+  awk -v idx=$1 -F"|" 'FNR == idx { print $2 }' $wsend_base/.list
+}
+
+deleteByIndex() {
+  link=$(link_from_index $1)
+
+  if [ "$link" ]; then
+    deleteFile
+  else
+    echo "Invalid index. Check your local list with --list option"
+  fi
+}
+
+sendFile() {
+  local qr=$1
+  if [[ "$qr" != "qr" && "$qr" != *"@"* ]]; then
+    local ttl=$1
+  fi
+  if [[ "$sendEmail" == *"@"* ]]; then
+    local sendMail=$sendEmail
+  fi
+
+  if [[ -e "$fileOrDirToSend" ]]; then
+    if [ -d "$fileOrDirToSend" ]; then
+      #we want to send a directory, so make a compressed archive
+      fileOrDirToSend=${fileOrDirToSend%/}
+      tar cfj "$fileOrDirToSend.tar.bz2" "$fileOrDirToSend"
+      fileToSend="$fileOrDirToSend.tar.bz2"
+    elif [ -e "$fileOrDirToSend" ]; then
+      fileToSend=$fileOrDirToSend
+    fi
+
+    if [ "$clientOS" == "Darwin" ]; then
+      fileToSendSize=$(stat -f %z "$fileToSend")
+    else
+      fileToSendSize=$(stat -c%s "$fileToSend")
+    fi
+
+    getAccountSpace
+    if [ "$accountSizeAvailable" == "not enough space in your account for this transfer" ]; then
+      notEnoughSpaceErr
+    elif [ "$accountSizeAvailable" == "file is too big for your account size" ]; then
+      filesizeTooLarge
+    else
+        if [[ $link ]]; then
+            #link was provided, so update target link with file
+            curlReturn=$(curl -F "uid=$id" -F "link=$link" -F "filehandle=@$fileToSend" $host/update_cli)
+            echo "$curlReturn"
+            exit 0
+        else
+            #simply create a new one
+            if [[ "$qr" == "qr" && "$ttl" && ! "$sendMail" ]]; then
+              curlReturn=$(curl -F "uid=$id" -F "ttl=$ttl" -F "qr=true" -F "filehandle=@$fileToSend" $host/upload_cli)
+            elif [[ "$qr" != "qr" && "$ttl" && "$sendMail" ]]; then
+              curlReturn=$(curl -F "uid=$id" -F "ttl=$ttl" -F "email=$sendMail" -F "filehandle=@$fileToSend" $host/upload_cli)
+              if [[ "$curlReturn" == *"https"* ]]; then
+                sentEmail
+              fi
+            elif  [[ "$qr" == "qr" && ! "$ttl" && ! "$sendMail" ]]; then
+              curlReturn=$(curl -F "uid=$id" -F "qr=true" -F "filehandle=@$fileToSend" $host/upload_cli)
+            elif [[ "$qr" != "qr" && ! "$ttl" && "$sendMail" ]]; then
+              curlReturn=$(curl -F "uid=$id" -F "email=$sendMail" -F "filehandle=@$fileToSend" $host/upload_cli)
+              if [[ "$curlReturn" == *"https"* ]]; then
+                sentEmail
+              fi
+            else
+              curlReturn=$(curl -F "uid=$id" -F "filehandle=@$fileToSend" $host/upload_cli)
+              echo "$curlReturn|$(make_absolute "$fileOrDirToSend")" >> "$wsend_base/.list"
+            fi
+        fi
+        echo "$curlReturn"
+    fi
+
+    if [ -d "$fileOrDirToSend" ]; then
+      #remove our temporary file
+      rm "$fileToSend"
+    fi
+  elif [ "$fileSendBool" == "true" ]; then
+    #want to send file, but source doesn't exist
+    echoUsage="true"
+  fi
+}
+
+updateFile() {
+  getAccountType
+  if [ $user_type != 'unregistered' ] && [ $user_type != 'unknown' ]; then
+    if [ -z "${firstArg}" ] && [ -z "${secondArg}" ]; then
+      echoerr -e "\033[01;31m"
+      echoerr "error:   need link and file";
+      echoerr -e "\033[00m"
+    else
+      # we dont want the user to have to remember the order
+      # of link first or file first
+      # so we parse the args and determine which is which
+      # we only care that one is a link and the other is a
+      # file
+
+      #previous version just match on http, prefer to match on url protocol http[s]://
+      if  [[ $firstArg =~ ^https*:// ]]; then
+        link=$firstArg
+        fileOrDirToSend=$secondArg
+      else
+        link=$secondArg
+        fileOrDirToSend=$firstArg
+      fi
+
+      sendFile
+    fi
+  else
+    echoerr -e "\033[01;31m"
+    echoerr "error:   only registered and paid accounts can update files";
+    echoerr -e "\033[00m"
+  fi
+}
+
+#Update a file designated by its index in .list
+#Assume that the update as to be made with the absolute path store in the list entry
+updateFileByIndex() {
+  local link=$(link_from_index $1)
+  local filename=$(filename_from_index $1)
+
+  firstArg=$link
+  secondArg=$filename
+  updateFile
+}
+
+referLink() {
+  if [ $user_type != 'unregistered' ] && [ $user_type != 'unknown' ]; then
+    echoerr -e "\033[01;36m"
+    echoerr "info:    getting referral link"
+    echoerr " "
+    echoerr -ne "\e[00m"
+    referLinkUrl=$(curl -s -X POST -d "id=$id" $host/referlink_cli)
+    echo $referLinkUrl
+  else
+    echoerr -e "\033[01;31m"
+    echoerr "error:   referrals available to registered accounts";
+    echoerr -e "\033[00m"
+  fi
+
+}
+
+list() {
+  if [[ -s $wsend_base/.list ]]
+  then
+     i=1
+    while read upload; do
+      echo "[$i] ${upload#*|} -> ${upload%|*}"
+      i=$(( i + 1))
+    done < $wsend_base/.list
+  else
+    echo "You have no uploads at this time"
+  fi
+}
+
+listServer() {
+  getAccountType
+  if [[ "$user_type" != "unregistered" ]] && [[ "$user_type" != "unknown" ]]; then
+    serverList=$(curl -s -X POST -d "uid=$id" $host/list_cli)
+    if [ "$clientOS" == "Darwin" ]; then
+      if [[ "$user_type" == "paid" ]]; then
+        echo $serverList | sed 's/},{/\'$'\n/g' | sed 's/"size"://g' | sed 's/,"timestamp":"/\'$'\t/g' | sed 's/T............Z","download_count":/\'$'\t/g' | sed 's/,"filename":"/\'$'\t/g' | sed 's/,"link":"/\'$'\t/g' | sed 's/}]//g' | tr -d '[{' | sed 's/"//g' | column -t
+      else
+        echo $serverList | sed 's/},{/\'$'\n/g' | sed 's/"size"://g' | sed 's/,"timestamp":"/\'$'\t/g' | sed 's/T............Z","filename":"/\'$'\t/g' | sed 's/","link":"/\'$'\t/g' | sed 's/}]//g' | tr -d '[{' | sed 's/"//g' | column -t
+      fi
+    else
+      if [[ "$user_type" == "paid" ]]; then
+        echo $serverList | sed 's/},{/\n/g' | sed 's/"size"://g' | sed 's/,"timestamp":"/\t/g' | sed 's/T............Z","download_count":/\t/g' | sed 's/,"filename":"/\t/g' | sed 's/","link":"/\t/g' | sed 's/}]//g' | tr -d '[{' | sed 's/"//g' | column -t
+      else
+        echo $serverList | sed 's/},{/\n/g' | sed 's/"size"://g' | sed 's/,"timestamp":"/\t/g' | sed 's/T............Z","filename":"/\t/g' | sed 's/","link":"/\t/g' | sed 's/}]//g' | tr -d '[{' | sed 's/"//g' | column -t
+      fi
+    fi
+    #echo $serverList | grep -Po '"filename":.*?[^\\]",' | tr "\"" " "
+  else
+    echoerr -e "\033[01;31m"
+    echoerr "error:   only registered and paid accounts can list files";
+    echoerr "error:   from the server";
+    echoerr -e "\033[00m"
+  fi
+
+}
+listServerUrl() {
+  getAccountType
+  if [[ "$user_type" != 'unregistered' ]] && [[ "$user_type" != 'unknown' ]]; then
+    serverList=$(curl -s -X POST -d "uid=$id" $host/list_cli)
+    if [[ "$clientOS" == "Darwin" ]]; then
+      echo $serverList | sed 's/},{/\'$'\n/g'| sed 's/^.*"link":"\(.*\)".*$/\1/g'
+    else
+      echo $serverList | sed 's/},{/\n/g' | sed 's/^.*"link":"\(.*\)".*$/\1/g'
+    fi
+
+  else
+    echoerr -e "\033[01;31m"
+    echoerr "error:   only registered and paid accounts can list files";
+    echoerr "error:   from the server";
+    echoerr -e "\033[00m"
+  fi
+
+}
+
+downloadLastVersion() {
+	curl -s -L -o "$wsend_base/update.sh" https://raw.github.com/abemassry/wsend/master/update.sh
+	bash "$wsend_base/update.sh" $@
+	exit 0
+}
+
+#As readlink is not available on all distro or OSX, provide a portable way to get an 
+#absolute path from a relative one.
+make_absolute() {
+  local ret=false
+  local rel_path=$1
+
+  if [[ ! -z $rel_path ]]; then
+    #strip eventual last slash
+    rel_path=${rel_path%/}
+
+    if [ "$rel_path" = "" ]; then
+      rel_path="/"
+    fi
+
+    base_name=${rel_path##*/}
+    rel_dir=${rel_path%$base_name}
+
+    if [[ $rel_dir = "" ]]; then
+        rel_dir="."
+    fi
+
+    if cd -P "$rel_dir" 1>/dev/null; then
+      #we jump in the directory and use $PWD
+      if [[ $(pwd) = "/" ]]; then
+        echo "/$base_name"
+      else
+        echo "$(pwd)/$base_name"
+      fi
+
+      cd - 1>&2 > /dev/null #get back to OLD_PATH
+      ret=true
+    fi
+  fi
+
+  $ret
+}
+
+if [[ ! $curl_installed ]]; then
+  echoerr -e "\033[01;31m"
+  echoerr "error:   curl is required but it is not installed. Aborting";
+  echoerr "error:   For ubuntu please run: sudo apt-get install curl";
+  echoerr -e "\033[00m"
+  exit 1;
+fi
+# check to see if directory exists
+if [ -d "$wsend_base" ]; then
+  #check version
+  installedVersion=$(cat $wsend_base/version)
+  latestVersion=$(curl -L -s https://raw.github.com/abemassry/wsend/master/version)
+  if [ "$installedVersion" != "$latestVersion" ]; then
+    echoerr -e "\033[01;36m"
+    echoerr "info:    "
+    echoerr "info:    new version detected, auto updating"
+    echoerr "info:    "
+    echoerr -e "\033[00m"
+    downloadLastVersion
+  fi
+else
+  # if not, install
+  if [ "$freeSpaceK" -gt 100 ]; then
+    mkdir $wsend_base
+    downloadLastVersion
+  else
+    echoerr "not enough free space to continue. Aborting";
+    exit 1;
+  fi
+  #add alias to shell
+  #execute alias command
+  if [ $SHELL == "/bin/bash" ]; then
+    bashInstall
+  elif [ $SHELL == "/bin/csh" ]; then
+    cshInstall
+  elif [ $SHELL == "/bin/tcsh" ]; then
+    cshInstall
+  elif [ $SHELL == "/bin/ksh" ]; then
+    kshInstall
+  elif [ $SHELL == "/bin/zsh" ]; then
+    zshInstall
+  fi #install done
+fi 
+#check for installation fin
+#check to see if user is registered
+if [ -e "$wsend_base/.id" ]; then
+  id=$(cat $wsend_base/.id)
+  #ask server for account type
+  user_type=$(curl -s -X POST -d "uid=$id" $host/usertype)
+  if [ "$user_type" == 'free' ]; then
+    freeInfoMessage
+  elif [ "$user_type" == 'unregistered' ]; then
+    registerInfoMessage
+  elif [ "$user_type" == 'unknown' ]; then
+    unregisteredSignUp
+  fi
+else
+  echoerr -e "\033[01;36m"
+  echoerr "info:    "
+  echoerr "info:    Installing and signing up for the first time"
+  echoerr "info:    with an unregistered account"
+  echoerr "info:    if you already have an account you can log in with:"
+  echoerr "info:    "
+  echoerr "info:    wsend --login"
+  echoerr "info:    "
+  echoerr "info:    your transfer will continue"
+  echoerr "info:    "
+  echoerr -e "\033[00m"
+  unregisteredSignUp
+  getAccountType
+fi
+
+RETVAL=0
+loginBool="false"
+registerBool="false"
+referBool="false"
+referLinkBool="false"
+fileSendBool="false"
+echoUsage="false"
+deleteBool="false"
+updateBool="false"
+qrcode="false"
+ttl=""
+sendEmail=""
+fileOrDirToSend="$1"
+
+if [ $# == 0 ]; then
+  echoUsage="true"
+fi
+
+while test -n "$1"; do
+  case "$1" in
+   --login|-l)
+      loginBool="true"
+      shift
+      ;;
+   --register|-r)
+      registerBool="true"
+      shift
+      ;;
+   --refer)
+      referBool="true"
+      friendEmail=$2
+      shift
+      shift
+      ;;
+   --refer-link)
+      referLinkBool="true"
+      shift
+      ;;
+   --rm|-x)
+      deleteBool="true"
+      link=$2
+      shift
+      shift
+      ;;
+   --rm-index|-xi)
+      deleteByIndex $2
+      shift
+      shift
+      ;;
+   --update|-u)
+      updateBool="true"
+      firstArg=$2
+      secondArg=$3
+      shift
+      shift
+      shift
+      ;;
+   --update-index|-ui)
+      updateFileByIndex $2
+      shift
+      shift
+      ;;
+   --list-local|-ll)
+      list
+      shift
+      ;;
+   --list-server|-ls)
+      listServer
+      shift
+      ;;
+   --list-server-url|-lsu)
+      listServerUrl
+      shift
+      ;;
+   --qr)
+      fileSendBool="true"
+      qrcode="true"
+      if [[ "$2" == "--ttl" || "$2" == "-t" ]]; then
+        ttl=$3
+        fileOrDirToSend="$4"
+      else
+        fileOrDirToSend="$2"
+      fi
+      shift
+      shift
+      ;;
+   --ttl|-t)
+      fileSendBool="true"
+      ttl="$2"
+      if [[ "$3" == "--qr" ]]; then
+        qrcode="true"
+        fileOrDirToSend="$4"
+      elif [[ "$3" == "-m" || "$3" == "--mail" ]]; then
+        # --ttl[1] 1hr[2] --mail[3] foo@bar.com[4] file[5]
+        sendEmail=$4
+        fileOrDirToSend="$5"
+      else
+        fileOrDirToSend="$3"
+      fi
+      shift
+      shift
+      ;;
+   --mail|-m)
+      fileSendBool="true"
+      sendEmail="$2"
+      if [[ "$3" == "-t" || "$3" == "--ttl" ]]; then
+        # --mail[1] foo@bar.com[2] --ttl[3] 1h[4] file[5]
+        ttl=$4
+        fileOrDirToSend="$5"
+      else
+        # --mail[1] foo@bar.com[2] file[3]
+        fileOrDirToSend="$3"
+      fi
+      shift
+      shift
+      ;;
+    *)
+      fileSendBool="true"
+      shift
+      ;;
+  esac
+done
+
+if [ $loginBool == "true" ]; then
+  login
+fi
+
+if [ $registerBool == "true" ]; then
+  register
+fi
+
+if [ $referBool == "true" ]; then
+  refer
+fi
+
+if [ $referLinkBool == "true" ]; then
+  referLink
+fi
+
+if [ $deleteBool == "true" ]; then
+  deleteFile
+fi
+
+if [ $updateBool == "true" ]; then
+  updateFile
+fi
+
+if [ "$fileSendBool" == "true"  ] && [ "$qrcode" == "true" ] && [[ $ttl ]]; then
+  sendFile "qr" "$ttl"
+elif [ "$fileSendBool" == "true" ] && [ "$qrcode" == "true" ] && [[ ! $ttl ]]; then
+  sendFile "qr"
+elif [ "$fileSendBool" == "true" ] && [ "$qrcode" != "true" ] && [[ $ttl ]] && [[ ! $sendEmail ]]; then
+  sendFile "$ttl"
+elif [ "$fileSendBool" == "true" ] && [ "$qrcode" != "true" ] && [[ ! $ttl ]] && [[ $sendEmail ]]; then
+  sendFile "$sendEmail"
+elif [ "$fileSendBool" == "true" ] && [ "$qrcode" != "true" ] && [[ $ttl ]] && [[ $sendEmail ]]; then
+  sendFile "$ttl" "$sendEmail"
+elif [ "$fileSendBool" == "true" ] && [ "$qrcode" != "true" ] && [[ ! $ttl ]] & [[ ! $sendEmail ]]; then
+  sendFile
+fi
+
+if [ $echoUsage == "true" ]; then
+  echoerr -e "\033[01;31m"
+  echoerr "error:   "
+  echoerr "error:   Usage: $0 [-l|--login] [-r|--register]"
+  echoerr "error:   Usage: [--refer friend@example.com]"
+  echoerr "error:   Usage: [--refer-link]"
+  echoerr "error:   Usage: [-ls|--list-server]"
+  echoerr "error:   Usage: [-lsu|--list-server-url]"
+  echoerr "error:   Usage: [-ll|--list-local]"
+  echoerr "error:   Usage: [-x|--rm] <url>"
+  echoerr "error:   Usage: [-xi|--rm-index] <idx>"
+  echoerr "error:   Usage: [-u|--update] <url> <file>"
+  echoerr "error:   Usage: [-ui|--update-index] <idx>"
+  echoerr "error:   Usage: [--qr] <file>"
+  echoerr "error:   Usage: [-t|--ttl] <1h> <file>"
+  echoerr "error:   Usage: [-m|--mail] <email address> <file>"
+  echoerr "error:   or send a file, example:"
+  echoerr "error:   $0 file.txt"
+  echoerr "error:   "
+  echoerr -e "\033[00m"
+fi

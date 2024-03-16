@@ -1,0 +1,2 @@
+2023/10/16-18:26:29.727 df6 Creating DB /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_cbcb29fc44dda8d5b504d9f3f7f87841.safeframe.googlesyndication.com_0.indexeddb.leveldb since it was missing.
+2023/10/16-18:26:29.746 df6 Reusing MANIFEST /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_cbcb29fc44dda8d5b504d9f3f7f87841.safeframe.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001

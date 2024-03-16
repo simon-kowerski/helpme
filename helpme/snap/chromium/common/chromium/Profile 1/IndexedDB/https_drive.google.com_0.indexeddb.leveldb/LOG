@@ -1,0 +1,6 @@
+2023/11/05-10:46:04.347 f32 Reusing MANIFEST /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/11/05-10:46:04.353 f32 Recovering log #13
+2023/11/05-10:46:04.540 f32 Reusing old log /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/000013.log 
+2023/11/05-10:48:40.024 f33 Level-0 table #18: started
+2023/11/05-10:48:40.245 f33 Level-0 table #18: 3933317 bytes OK
+2023/11/05-10:48:40.260 f33 Delete type=0 #13

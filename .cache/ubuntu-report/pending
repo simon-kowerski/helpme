@@ -1,0 +1,25 @@
+{
+  "Version": "22.04",
+  "Arch": "arm64",
+  "RAM": 8,
+  "Partitions": [
+    122.5,
+    0.3
+  ],
+  "Screens": [
+    {
+      "Size": "600mmx340mm",
+      "Resolution": "1920x1080",
+      "Frequency": "59.96"
+    }
+  ],
+  "Autologin": true,
+  "LivePatch": false,
+  "Session": {
+    "DE": "ubuntu:GNOME",
+    "Name": "ubuntu",
+    "Type": "wayland"
+  },
+  "Language": "en_US",
+  "Timezone": "America/New_York"
+}

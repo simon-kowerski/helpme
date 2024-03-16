@@ -1,0 +1,9 @@
+2024/01/12-16:42:32.178 178c Reusing MANIFEST /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/12-16:42:32.183 178c Recovering log #65
+2024/01/12-16:42:32.189 178c Reusing old log /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000065.log 
+2024/01/12-16:42:48.295 178b Compacting 1@1 + 1@2 files
+2024/01/12-16:42:48.438 178b Generated table #68@1: 57 keys, 1609 bytes
+2024/01/12-16:42:48.439 178b Compacted 1@1 + 1@2 files => 1609 bytes
+2024/01/12-16:42:48.447 178b compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/01/12-16:42:48.451 178b Delete type=2 #66
+2024/01/12-16:42:48.451 178b Delete type=2 #63

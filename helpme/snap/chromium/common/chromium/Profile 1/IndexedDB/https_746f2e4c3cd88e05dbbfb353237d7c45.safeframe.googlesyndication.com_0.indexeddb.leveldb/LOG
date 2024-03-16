@@ -1,0 +1,2 @@
+2023/06/24-22:13:58.032 cdf Creating DB /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_746f2e4c3cd88e05dbbfb353237d7c45.safeframe.googlesyndication.com_0.indexeddb.leveldb since it was missing.
+2023/06/24-22:13:58.054 cdf Reusing MANIFEST /home/sloshuser/snap/chromium/common/chromium/Profile 1/IndexedDB/https_746f2e4c3cd88e05dbbfb353237d7c45.safeframe.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001

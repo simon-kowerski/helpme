@@ -1,0 +1,11 @@
+[user]
+	name = simon-kowerski
+	email = kowerski8@gmail.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[safe]
+	directory = /usr/share/SPICESat-OSImage/Payload-OSImager
+	directory = /usr/share/SPICESat-OSImage/Payload-OSImager
+	directory = /usr/share/SPICESat-OSImage/Payload-OSImager
+	directory = /usr/share/SPICESat-OSImage/Payload-OSImager

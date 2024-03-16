@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo rm -r ~/SPICESat
+sudo apt remove spicesat-osimage
+dpkg -b ~/Desktop/SPICESat-OSImage
+sudo apt install ~/Desktop/SPICESat-OSImage.deb

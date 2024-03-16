@@ -1,0 +1,16 @@
+xauth:  file /root/.Xauthority does not exist
+
+
+X.Org X Server 1.21.1.4
+X Protocol Version 11, Revision 0
+Current Operating System: Linux slosh1 5.15.0-1047-raspi #50-Ubuntu SMP PREEMPT Fri Feb 9 13:48:00 UTC 2024 aarch64
+Kernel command line: coherent_pool=1M 8250.nr_uarts=0 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1 video=HDMI-A-1:1920x1080M@60 smsc95xx.macaddr=D8:3A:DD:48:98:4B vc_mem.mem_base=0x3ec00000 vc_mem.mem_size=0x40000000  zswap.enabled=1 zswap.zpool=z3fold zswap.compressor=zstd dwc_otg.lpm_enable=0 console=tty1 root=LABEL=writable rootfstype=ext4 rootwait fixrtc quiet splash
+xorg-server 2:21.1.4-2ubuntu1.7~22.04.8 (For technical support please see http://www.ubuntu.com/support) 
+Current version of pixman: 0.40.0
+	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+(==) Log file: "/var/log/Xorg.1.log", Time: Wed Mar  6 21:36:12 2024
+(==) Using system config directory "/usr/share/X11/xorg.conf.d"

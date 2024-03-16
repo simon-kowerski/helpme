@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/sloshuser/Downloads/usertrustrsacertificationauthority.cer" added="2024-03-07T04:23:39.303645Z" modified="2024-03-07T04:23:39.303659Z" visited="2024-03-07T04:23:39.303648Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pkix-cert"/>
+        <bookmark:applications>
+          <bookmark:application name="gnome-control-center" exec="&apos;gnome-control-center %u&apos;" modified="2024-03-07T04:23:39.303652Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/SPICESat-OSImage_1.0.0/usr/share/SPICESat-OSImage/installall.sh" added="2024-03-07T04:35:34.848715Z" modified="2024-03-07T04:42:32.899066Z" visited="2024-03-07T04:35:34.848718Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2024-03-07T04:42:32.005996Z" count="2"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-03-07T04:42:32.899062Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/SPICESat-OSImage_1.0.0/DEBIAN/postinst" added="2024-03-07T04:36:30.068463Z" modified="2024-03-07T04:58:13.367449Z" visited="2024-03-07T04:36:30.068464Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-03-07T04:58:13.367442Z" count="3"/>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2024-03-07T04:53:12.417933Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/bin/osimager" added="2024-03-07T04:47:52.397485Z" modified="2024-03-07T04:50:58.789018Z" visited="2024-03-07T04:47:52.397487Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;gedit %U&apos;" modified="2024-03-07T04:49:42.364303Z" count="2"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-03-07T04:50:58.789011Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/SPICESat-OSImage_1.0.0/usr/bin/osimager" added="2024-03-07T04:52:40.459704Z" modified="2024-03-07T04:52:40.459716Z" visited="2024-03-07T04:52:40.459705Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-03-07T04:52:40.459711Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/sloshuser/Desktop/SPICESat-OSImage_1.0.0/usr/share/SPICESat-OSImage/completePackage.txt" added="2024-03-07T05:03:59.815365Z" modified="2024-03-07T05:03:59.815377Z" visited="2024-03-07T05:03:59.815366Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2024-03-07T05:03:59.815371Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>
